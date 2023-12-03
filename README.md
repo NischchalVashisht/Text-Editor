@@ -17,9 +17,12 @@ This project demonstrates the integration of the TinyMCE Editor into Salesforce,
 Before you begin, make sure you have the following:
 
 - Salesforce Developer Account
+- Basic Understanding of LWC components.
+- Basic Understanding of VF page.
+
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/your-username/salesforce-tinymce-integration.git](https://github.com/NischchalVashisht/Text-Editor/tree/main)https://github.com/NischchalVashisht/Text-Editor/tree/main
+   git clone [https://github.com/NishchalVashisht/Text-Editor.git]
