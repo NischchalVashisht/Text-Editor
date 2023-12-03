@@ -1,0 +1,8 @@
+<template>
+    <lightning-button label="Call VF" title="Non-primary action" onclick={callVFPageMethod} class="slds-m-left_x-small"></lightning-button>
+    <br />
+      <p style="font-weight: bold; font-size: x-large">{messageFromVF}</p>
+      <br />
+      <iframe id="LWCWithVFPage" src="/apex/Editor" width="100%" height="550px"> </iframe>
+        
+</template>

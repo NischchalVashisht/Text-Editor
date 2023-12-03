@@ -1,0 +1,54 @@
+<apex:page >
+    <apex:includeScript value="{!$Resource.tinymce5}/tinymce/js/tinymce/tinymce.min.js"/> 
+    <apex:slds />
+    <script>
+   		 window.onload = function()
+            {
+              console.log('$Resource.TinyMCE1',tinymce);
+                tinymce.init({
+                    selector : "#textAreaId",
+                     font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n;Andale Mono=andale mono,times;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;',
+     				 toolbar: "insertfile undo redo | formatselect | fontselect fontsizeselect styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | bullist numlist outdent indent | removeformat | preview | help",
+                     content_css: [
+                      '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+                      '//www.tiny.cloud/css/codepen.min.css'
+                    ],
+                    image_advtab: true,
+                    skin: 'oxide',
+                     plugins: [
+                    			  "advlist","autolink","lists","link","image","charmap","preview","anchor",
+                                   "searchreplace","wordcount","visualblocks","visualchars","code","fullscreen",
+                         			"insertdatetime","media","nonbreaking","save","table","directionality",
+									"emoticons","template"
+                   			  ],
+                  
+                                  
+                  });
+            };
+    
+    	var lexOrigin ="https://cunning-impala-iuaae5-dev-ed.lightning.force.com";
+        window.addEventListener("message",function(event){
+            console.log('Called From LWLC')
+            if(event.origin !== lexOrigin){
+                //Not the expected origin
+                return;
+            }
+            console.log('Helloo',event.data)
+            tinyMCE.get('textAreaId').setContent('Text from LWC : '+event.data); 
+        	console.log('Helloo 2',document.getElementById("textAreaId"),document.getElementById("textAreaId").value)
+        },false);
+    	
+    	function sendToLWC() {
+        var payload = tinyMCE.get('textAreaId').getContent();
+        var message = {
+            name:"SampleVFToLWCMessage",
+            payload:payload
+        };
+        parent.postMessage(message,lexOrigin);
+    }
+    </script> 
+    
+    <textarea id="textAreaId" height = "450px" value=""></textarea>
+    <button onclick="sendToLWC()">Send to LWC</button>
+         
+</apex:page>
