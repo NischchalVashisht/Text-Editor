@@ -1,18 +1,29 @@
-# Salesforce DX Project: Next Steps
+# Salesforce TinyMCE Integration
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+![Salesforce TinyMCE Integration](/path/to/your/image.png)
 
-## How Do You Plan to Deploy Your Changes?
+## Overview
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+This project demonstrates the integration of the TinyMCE Editor into Salesforce, providing a rich text editing experience within the Salesforce platform. TinyMCE is a powerful and customizable WYSIWYG editor that can be easily embedded into web applications.
 
-## Configure Your Salesforce DX Project
+## Features
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+- Seamless integration of TinyMCE Editor into Salesforce.
+- Rich text editing capabilities for Salesforce users.
+- Customization options for TinyMCE to suit your application's needs.
 
-## Read All About It
+## Getting Started
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+### Prerequisites
+
+Before you begin, make sure you have the following:
+
+- Salesforce Developer Account
+- TinyMCE API Key (Get one [here](https://www.tiny.cloud/get-tiny/api-key/))
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/salesforce-tinymce-integration.git
